@@ -12,7 +12,7 @@ label=tk.Label(mainWindow, text="Hello World!") #create a label widget
 label.pack(side='top') #add the label to the window
 
 canvas= tk.Canvas(mainWindow, relief='raised', borderwidth=1) #create a canvas widget
-canvas.pack(side='left')
+canvas.pack(side='left', fill=tk.BOTH, expand=True) #add the canvas to the window
 
 mainWindow.mainloop() # placce window on computer screen, listen for events, wait for user input
 
