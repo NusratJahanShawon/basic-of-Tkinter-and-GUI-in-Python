@@ -41,7 +41,7 @@ optionFrame = tk.LabelFrame(mainWindow, text="File Details")
 optionFrame.grid(row=1, column=2, sticky='ne')
 
 rbValue = tk.IntVar()
-rbValue.set(3)
+rbValue.set(3) # the numbe of the default selected radio button here 3
 
 #radio buttons
 radio1 = tk.Radiobutton(optionFrame, text="Filename", value=1, variable=rbValue)
@@ -51,5 +51,25 @@ radio1.grid(row=0, column=0, sticky='w')
 radio2.grid(row=1, column=0, sticky='w')    
 radio3.grid(row=2, column=0, sticky='w')
 
+#widget to desplay tge result
+resultLabel = tk.Label(mainWindow, text="Result")
+resultLabel.grid(row=2, column=2, sticky='nw')
+result=tk.Entry(mainWindow)
+result.grid(row=2, column=2, sticky='sw')
+
+#frame for the time spinners
+timeFrame = tk.LabelFrame(mainWindow, text="Time")  
+timeFrame.grid(row=3, column=0, sticky='new')
+#time spinners
+hourSpinner = tk.Spinbox(timeFrame, width=2, values=tuple(range(0,24)))
+minuteSpinner = tk.Spinbox(timeFrame, width=2, from_=0, to=59)
+secondSpinner = tk.Spinbox(timeFrame, width=2, from_=0, to= 59)
+hourSpinner.grid(row=0, column=0)
+tk.Label(timeFrame, text=":").grid(row=0, column=1)
+minuteSpinner.grid(row=0, column=2)
+tk.Label(timeFrame, text=":").grid(row=0, column=3)
+secondSpinner.grid(row=0, column=4)
+
+
 mainWindow.mainloop()     
-print(rbValue.get())                                     
+# print(rbValue.get())                                     
