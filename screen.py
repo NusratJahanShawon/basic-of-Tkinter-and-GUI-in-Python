@@ -5,12 +5,10 @@ mainWindow = tk.Tk()
 
 mainWindow.geometry("640x480-8-200") 
 mainWindow.title("Grid Demo") 
+mainWindow['padx'] = 8
 
 label=tk.Label(mainWindow, text="TKinter Grid Demo")
 label.grid(row=0, column=0, columnspan=3)
-
-
-
 
 mainWindow.columnconfigure(0, weight=1) 
 mainWindow.columnconfigure(1, weight=1)     
@@ -41,7 +39,7 @@ optionFrame = tk.LabelFrame(mainWindow, text="File Details")
 optionFrame.grid(row=1, column=2, sticky='ne')
 
 rbValue = tk.IntVar()
-rbValue.set(3) # the numbe of the default selected radio button here 3
+rbValue.set(1) # the numbe of the default selected radio button here 3
 
 #radio buttons
 radio1 = tk.Radiobutton(optionFrame, text="Filename", value=1, variable=rbValue)
@@ -92,6 +90,11 @@ monthSpinner.grid(row=1, column=1)
 yearSpinner.grid(row=1, column=2)
 dateFrame['padx'] = 36
 
+#buttons
+okButton = tk.Button(mainWindow, text="OK")
+cancelButton = tk.Button(mainWindow, text="Cancel", command=mainWindow.quit)
+okButton.grid(row=4, column=3, sticky='e')
+cancelButton.grid(row=4, column=4, sticky='w')
 
 
 mainWindow.mainloop()     
