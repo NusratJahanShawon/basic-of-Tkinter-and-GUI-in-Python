@@ -60,6 +60,7 @@ result.grid(row=2, column=2, sticky='sw')
 #frame for the time spinners
 timeFrame = tk.LabelFrame(mainWindow, text="Time")  
 timeFrame.grid(row=3, column=0, sticky='new')
+
 #time spinners
 hourSpinner = tk.Spinbox(timeFrame, width=2, values=tuple(range(0,24)))
 minuteSpinner = tk.Spinbox(timeFrame, width=2, from_=0, to=59)
@@ -69,6 +70,28 @@ tk.Label(timeFrame, text=":").grid(row=0, column=1)
 minuteSpinner.grid(row=0, column=2)
 tk.Label(timeFrame, text=":").grid(row=0, column=3)
 secondSpinner.grid(row=0, column=4)
+timeFrame['padx'] = 36
+
+#frame for the date spinners
+dateFrame = tk.LabelFrame(mainWindow, text="Date")
+dateFrame.grid(row=4, column=0, sticky='new')
+#date llabels
+dayLabel = tk.Label(dateFrame, text="Day")
+monthLabel = tk.Label(dateFrame, text="Month")
+yearLabel = tk.Label(dateFrame, text="Year")
+dayLabel.grid(row=0, column=0,sticky='w')                       
+monthLabel.grid(row=0, column=1,sticky='w')
+yearLabel.grid(row=0, column=2,sticky='w')
+
+#date spinners
+daySpinner = tk.Spinbox(dateFrame, width=4, from_=1, to=31)
+monthSpinner = tk.Spinbox(dateFrame, width=4, values=("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))
+yearSpinner = tk.Spinbox(dateFrame, width=6, from_=2000, to=2099)
+daySpinner.grid(row=1, column=0)    
+monthSpinner.grid(row=1, column=1)
+yearSpinner.grid(row=1, column=2)
+dateFrame['padx'] = 36
+
 
 
 mainWindow.mainloop()     
